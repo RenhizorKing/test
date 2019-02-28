@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'hello')}">
-<body>
-  <div class="container">
-    <p th:text="${science}"/>
-  </div>
-</body>
-</html>
+@RequestMapping("/hello")
+String hello(Map<String, Object> model) {
+    RelativisticModel.select();
+    Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
+    model.put("science", "E=mc^2: 12 GeV = " + m.toString());
+    return "hello";
+}
 
