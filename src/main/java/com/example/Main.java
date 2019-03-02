@@ -25,7 +25,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import javax.security.auth.login.LoginException;
+import net.dv8tion.jda.core.AccountType;
+import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.JDABuilder;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,7 +48,12 @@ public class Main {
   private DataSource dataSource;
 
   public static void main(String[] args) throws Exception {
-    //SpringApplication.run(Main.class, args);
+    SpringApplication.run(Main.class, args);
+    try {
+			JDA jda = new JDABuilder(AccountType.BOT).setToken("NTQwODQ3Njg1ODQ2OTU4MDkx.DzYHCg.NwG6-51y5mQOL2kBLtXvKCTXmS8").buildAsync();
+		} catch (LoginException e) {
+			e.printStackTrace();
+		}
   }
 
   @RequestMapping("/")

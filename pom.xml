@@ -26,6 +26,13 @@
 
   <dependencies>
     <dependency>
+  		<artifactId>repo</artifactId>
+  		<groupId>JDA</groupId>
+  		<version>withDependencies</version>
+  		<scope>system</scope>
+    <systemPath>${project.basedir}/repo/JDA/withDependencies/JDA-withDependencies.jar</systemPath>
+  	</dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
