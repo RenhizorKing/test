@@ -48,12 +48,12 @@ public class Main {
   private DataSource dataSource;
 
   public static void main(String[] args) throws Exception {
-    SpringApplication.run(Main.class, args);
     try {
 			JDA jda = new JDABuilder(AccountType.BOT).setToken("NTQwODQ3Njg1ODQ2OTU4MDkx.DzYHCg.NwG6-51y5mQOL2kBLtXvKCTXmS8").buildAsync();
 		} catch (LoginException e) {
 			e.printStackTrace();
 		}
+    SpringApplication.run(Main.class, args);
   }
 
   @RequestMapping("/")
